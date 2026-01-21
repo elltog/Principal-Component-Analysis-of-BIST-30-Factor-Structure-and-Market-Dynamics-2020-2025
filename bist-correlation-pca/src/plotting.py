@@ -100,7 +100,7 @@ def plot_pca4(data):
 
 def plot_pca5(data):
   
-    bist30_price = yf.download("XU030.IS", start=data.index.min(), end=data.index.max(), progress=False)["Close"].dropna()
+    bist30_price = yf.download("XU030.IS", start=data.index.min(), end=data.index.max(), auto_adjust=True, progress=False)["Close"].dropna()
     bist30_ret = np.log(bist30_price / bist30_price.shift(1)).dropna()
 
     scaler = StandardScaler()

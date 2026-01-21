@@ -4,6 +4,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import statsmodels.api as sm
 import yfinance as yf
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+
 
 def correlation(data):
     cor1 = data.corr()[data.corr() !=1].max().sort_values()
